@@ -3,7 +3,7 @@ import {
     Response 
 } from "express";
 import { 
-    validate, 
+    validateBodyAddMovies, 
     createID 
 } from "../utils";
 import data from "../data";
@@ -15,7 +15,7 @@ const addMovies = (request: Request, response: Response) => {
         note 
     } = request.body;
 
-    const isPassed = validate(request.body);
+    const isPassed = validateBodyAddMovies(request.body);
     
     if(!isPassed) {
         response.status(400).send("Tipos de campos invalidos");
@@ -29,6 +29,7 @@ const addMovies = (request: Request, response: Response) => {
         description,
         note
     });
+
     response.status(200).send("Salvo com sucesso");
 }
 

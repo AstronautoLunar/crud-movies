@@ -1,7 +1,7 @@
-import validate from "./validate";
+import validateBodyAddMovies from "./validateBodyAddMovies";
 import createID from "./createID";
 
 export {
-    validate,
+    validateBodyAddMovies,
     createID
 }

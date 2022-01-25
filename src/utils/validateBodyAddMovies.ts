@@ -1,7 +1,7 @@
 import { BodyTypes } from "../types";
 
-function validate(body: BodyTypes): boolean {
-    const { 
+function validateBodyAddMovies(body: BodyTypes): boolean {
+    const {
         name, 
         description, 
         note 
@@ -21,4 +21,4 @@ function validate(body: BodyTypes): boolean {
     return isTodayPassed;
 }
 
-export default validate;
+export default validateBodyAddMovies;
