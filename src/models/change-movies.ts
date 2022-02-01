@@ -4,14 +4,15 @@ import {
 } from "express";
 import { BodyTypes } from "../types";
 import data from "../data";
+import { validateBodyChangeMovies } from "../utils";
 
 const changeMovies = (request: Request, response: Response) => {
-    // const isPassed = validate(request.body);
+    const isPassed = validateBodyChangeMovies(request.body);
 
-    // if(!isPassed) {
-    //     response.status(400).send("Os tipos de propriedades são invalidos");
-    //     return
-    // }
+    if(!isPassed) {
+        response.status(400).send("Os tipos de propriedades são invalidos");
+        return
+    }
 
     const { 
         id,
